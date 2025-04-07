@@ -5,6 +5,5 @@
 -- Use <space> - | instead
 -- vim.keymap.set("n", "<leader>vs", "<cmd>vsplit <CR>", { desc = "Split buffer vertically" })
 
-vim.keymap.set("n", "<leader>vs", "<cmd>vsplit <CR>", { desc = "Split buffer vertically" })
 vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
 vim.keymap.set("v", "<space>x", ":lua<CR>")
