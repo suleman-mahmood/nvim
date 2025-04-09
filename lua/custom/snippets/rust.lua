@@ -110,40 +110,12 @@ async fn <fn_name>(body: web::Json<<<body>Body>>, pool: web::Data<<PgPool>>) ->>
     fmta(
       [=[
 pub async fn <fn_name>(<params>, pool: &PgPool) ->> Result<<(), sqlx::Error>> {
-    sqlx::query!(
-        r#"
-        <finish>
-        "#,
-    )
-    .execute(pool)
-    .await
+    <finish>
 }
       ]=],
       {
         fn_name = i(1),
         params = i(2),
-        finish = i(0),
-      }
-    )
-  ),
-  s(
-    "dalle",
-    fmta(
-      [=[
-pub async fn <fn_name>(<params>, pool: &PgPool) ->> Result<<(), sqlx::Error>> {
-    sqlx::query!(
-        r#"
-        <sql_body>
-        "#,
-    )
-    .execute(pool)
-    .await
-}<finish>
-      ]=],
-      {
-        fn_name = i(1),
-        params = i(2),
-        sql_body = f(to_pascal_case, { 1 }, { user_args = { "user_args_value" } }),
         finish = i(0),
       }
     )
